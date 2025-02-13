@@ -8,12 +8,12 @@ export default function Home() {
   const { agents, fetchAgents } = useAgentStore();
 
   useEffect(() => {
-    agents.length === 0 && fetchAgents();
-  }, []);
+    if (agents.length === 0) fetchAgents();
+  }, [agents.length, fetchAgents]);
 
   return (
     <div className='h-full'>
-      <Sidebar side={false}/>
+      <Sidebar side={false} />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { SendHorizonal } from 'lucide-react';
 
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { FormEvent, FormEventHandler, useState } from 'react';
+import { FormEventHandler } from 'react';
 
 interface ChatFormProps {
   input: string;

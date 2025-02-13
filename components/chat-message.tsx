@@ -1,7 +1,5 @@
 'use client';
 
-import { useTheme } from 'next-themes';
-
 import { cn } from '@/lib/utils';
 import BotAvatar from '@/components/bot-avatar';
 
@@ -12,7 +10,7 @@ export interface ChatMessageProps {
   isLoading?: boolean;
 }
 
-const ChatMessage = ({ role, content, isLoading }: ChatMessageProps) => {
+const ChatMessage = ({ role, content }: ChatMessageProps) => {
   return (
     <div
       className={cn(

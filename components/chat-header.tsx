@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { ChevronLeft, Info } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 
 import { useAgentStore } from '@/hooks/agent-store';
 import { Button } from '@/components/ui/button';
