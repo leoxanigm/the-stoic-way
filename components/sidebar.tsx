@@ -1,14 +1,18 @@
 'use client';
 
-import { useAgentStore } from '@/hooks/select-agent';
+import { useAgentStore } from '@/hooks/agent-store';
 import { cn } from '@/lib/utils';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
+import { ModeToggle } from '@/components/mode-toggle';
 
 const Sidebar = () => {
   const { agents, selectedAgent, setSelectedAgent } = useAgentStore();
+
   return (
-    <div className='flex flex-col h-full text-primary bg-zinc-900 py-8'>
+    <div className='flex flex-col h-full dark:bg-zinc-900 bg-zinc-200 the p-2'>
+      <div className='self-start mb-2 me-2'>
+        <ModeToggle />
+      </div>
       <div>
         <h1 className='text-xl font-bold text-center'>The Stoic Way</h1>
         <p className='text-sm text-center text-primary/80'>
@@ -28,8 +32,7 @@ const Sidebar = () => {
               selectedAgent?.id === agent.id && 'bg-primary/10'
             )}
             key={agent.id}
-            onClick={() => setSelectedAgent(agent.id)}
-            >
+            onClick={() => setSelectedAgent(agent.id)}>
             <Avatar className='h-10 w-10'>
               <AvatarImage src={agent.image} alt='Avatar' />
             </Avatar>
