@@ -17,8 +17,6 @@ export interface ChatMessageProps {
 const ChatMessage = ({ role, content, isLoading }: ChatMessageProps) => {
   const { theme } = useTheme();
 
-  console.log(isLoading, content);
-
   return (
     <div
       className={cn(

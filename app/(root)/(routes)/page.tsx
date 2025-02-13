@@ -1,9 +1,8 @@
 'use client';
+import { useEffect } from 'react';
 
 import { useAgentStore } from '@/hooks/agent-store';
-import Chat from '@/components/chat';
-import Information from '@/components/information';
-import { useEffect } from 'react';
+import Sidebar from '@/components/sidebar';
 
 export default function Home() {
   const { agents, fetchAgents } = useAgentStore();
@@ -13,13 +12,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className='flex h-full'>
-      <div className='flex-[2]'>
-        <Chat />
-      </div>
-      <div className='flex-1'>
-        <Information />
-      </div>
+    <div className='h-full'>
+      <Sidebar side={false}/>
     </div>
   );
 }

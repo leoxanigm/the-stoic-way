@@ -5,7 +5,7 @@ import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import BotAvatar from '@/components/bot-avatar';
 
 const Information = () => {
-  const { agents, selectedAgent } = useAgentStore();
+  const { selectedAgent } = useAgentStore();
 
   return (
     <div className='h-full p-4 pt-16 dark:bg-zinc-900 bg-zinc-200'>
