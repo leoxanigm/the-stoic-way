@@ -5,7 +5,6 @@ import { cn } from '@/lib/utils';
 import { ModeToggle } from '@/components/mode-toggle';
 import BotAvatar from './bot-avatar';
 import { useRouter } from 'next/navigation';
-import MobileInformation from './mobile-information';
 
 const Sidebar = ({ side }: { side: boolean }) => {
   const { agents, selectedAgent, setSelectedAgent } = useAgentStore();

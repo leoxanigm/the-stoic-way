@@ -32,16 +32,7 @@ const ChatHeader = () => {
             <BotAvatar size='sm' />
             <p className='font-medium leading-none'>{selectedAgent.name}</p>
           </div>
-          <div className='relative'>
-            <MobileInformation />
-          </div>
-          {/* <Button
-              onClick={() => router.push('/')}
-              size='icon'
-              variant='ghost'
-              className='flex md:hidden'>
-              <Info className='!size-6' />
-            </Button> */}
+          <MobileInformation />
         </>
       )}
     </div>

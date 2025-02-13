@@ -1,8 +1,6 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { BeatLoader } from 'react-spinners';
-import {} from 'ai';
 
 import { cn } from '@/lib/utils';
 import BotAvatar from '@/components/bot-avatar';
@@ -15,8 +13,6 @@ export interface ChatMessageProps {
 }
 
 const ChatMessage = ({ role, content, isLoading }: ChatMessageProps) => {
-  const { theme } = useTheme();
-
   return (
     <div
       className={cn(
