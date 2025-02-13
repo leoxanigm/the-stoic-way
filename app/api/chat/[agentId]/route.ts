@@ -9,17 +9,19 @@ const google = createGoogleGenerativeAI({
 
 export async function POST(
   req: Request,
-  { params }: { params: { agentId: string } }
+  context: { params: { agentId: string } }
 ) {
   try {
     const { messages }: { messages: UIMessage[] } = await req.json();
-    const { agentId } = await params;
+    const { agentId } = context.params;
 
     if (!messages) {
       return new NextResponse('Bad Request', { status: 400 });
     }
 
-    const response = await axios.get(process.env.NEXT_PUBLIC_APP_URL + '/api/philosophers');
+    const response = await axios.get(
+      process.env.NEXT_PUBLIC_APP_URL + '/api/philosophers'
+    );
     const philosophers = response.data;
     const philosopher = philosophers.find(
       (p: { id: string }) => p.id === agentId
