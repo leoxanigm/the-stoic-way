@@ -2,7 +2,7 @@
 
 import { useAgentStore } from '@/hooks/agent-store';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
-import PlaceholderAvatar from './placeholder-avatar';
+import BotAvatar from '@/components/bot-avatar';
 
 const Information = () => {
   const { agents, selectedAgent } = useAgentStore();
@@ -11,7 +11,7 @@ const Information = () => {
     <div className='h-full p-4 pt-16 dark:bg-zinc-900 bg-zinc-200'>
       {!selectedAgent && (
         <div className='flex flex-col items-center h-full space-y-8'>
-          <PlaceholderAvatar size='lg'/>
+          <BotAvatar size='lg' />
           <div>No philosopher selected</div>
         </div>
       )}

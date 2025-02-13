@@ -1,9 +1,17 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import { useAgentStore } from '@/hooks/agent-store';
+import { Avatar, AvatarImage } from '@/components/ui/avatar';
 
-const PlaceholderAvatar = ({ size }: { size: 'sm' | 'lg' }) => {
-  return (
+const BotAvatar = ({ size, src }: { size: 'sm' | 'lg'; src?: string }) => {
+  const { selectedAgent } = useAgentStore();
+
+  return selectedAgent || src ? (
+    <Avatar className={cn(size === 'lg' ? 'h-32 w-32' : 'h-10 w-10')}>
+      <AvatarImage src={src ?? selectedAgent?.image} alt='Philosopher AI' />
+    </Avatar>
+  ) : (
     <div
       className={cn(
         'relative rounded-full overflow-hidden border',
@@ -23,4 +31,4 @@ const PlaceholderAvatar = ({ size }: { size: 'sm' | 'lg' }) => {
   );
 };
 
-export default PlaceholderAvatar;
+export default BotAvatar;

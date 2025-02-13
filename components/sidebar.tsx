@@ -4,6 +4,7 @@ import { useAgentStore } from '@/hooks/agent-store';
 import { cn } from '@/lib/utils';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import { ModeToggle } from '@/components/mode-toggle';
+import BotAvatar from './bot-avatar';
 
 const Sidebar = () => {
   const { agents, selectedAgent, setSelectedAgent } = useAgentStore();
@@ -33,9 +34,7 @@ const Sidebar = () => {
             )}
             key={agent.id}
             onClick={() => setSelectedAgent(agent.id)}>
-            <Avatar className='h-10 w-10'>
-              <AvatarImage src={agent.image} alt='Avatar' />
-            </Avatar>
+            <BotAvatar size='sm' src={agent.image} />
             <div className='ml-4 space-y-1'>
               <p className='font-medium leading-none'>{agent.name}</p>
             </div>
